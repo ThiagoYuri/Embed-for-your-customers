@@ -66,7 +66,24 @@
             filterPaneEnabled: true,
             navContentPaneEnabled: true
         },
-     
+        //Filter added
+        filters: [
+            {
+                $schema: "http://powerbi.com/product/schema#basic",
+                target: {
+                    table: "Products",
+                    column: "EnglishProductCategoryName"
+                },
+                //Filter block and hidden
+                displaySettings:
+                {
+                    isLockedInViewMode: true,
+                    isHiddenInViewMode: true
+                },
+                operator: "In",
+                values: ["Components"]
+            }
+        ],
     };
 
     // Embed the report and display it within the div container.
